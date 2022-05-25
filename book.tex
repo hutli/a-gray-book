@@ -1,0 +1,350 @@
+%
+% Body text font is Palatino!
+%
+
+\documentclass[a5paper,pagesize,10pt,bibtotoc,pointlessnumbers,
+normalheadings,DIV=9,twoside=false]{scrbook}
+
+% twoside, openright
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+\usepackage[babel,german=guillemets]{csquotes}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+\usepackage{verbatim} % for comments
+\usepackage{listings} % for comments
+
+\usepackage{blindtext}
+
+
+\titleformat{\chapter}[hang]
+  {\normalfont\huge\bfseries\centering}{}{20pt}{\Huge}
+
+\titlespacing*{\chapter} 
+  {0pt}{50pt}{40pt}
+
+\titleformat{\section}[hang]{\bfseries\Large}{}{1em}{\enspace}
+
+\newcommand{\q}[1]{>>\textit{#1}<<}
+\newcommand\potion[7]{
+    \section{#1}
+    #2
+    \\\\
+    \begin{tabular}{| p{.2\linewidth} | p{.72\textwidth} |}
+        \hline
+        Form & #3 \\
+        \hline
+        Roleplaying Effects & #4 \\
+        \hline
+        Mechanical Effects & #5 \\
+        \hline
+        Recipe & #6 \\
+        \hline
+    \end{tabular}
+    \\\\\\
+    #7
+    \newpage
+}
+\newcommand\widepotion[7]{
+    \section{#1}
+    #2
+    \\
+
+    \hskip-.15\linewidth\begin{tabular}{| p{.17\linewidth} | p{.98\linewidth} |}
+        \hline
+        Form & #3 \\
+        \hline
+        Roleplaying Effects & #4 \\
+        \hline
+        Mechanical Effects & #5 \\
+        \hline
+        Recipe & #6 \\
+        \hline
+    \end{tabular}
+    \\\\
+    #7
+    \newpage
+}
+\newcommand\mychapter[2]{
+    \topskip0pt
+    \vspace*{\fill}
+    \begin{it}
+    \chapter{#1}
+        #2
+    \end{it}
+    \vspace*{\fill}
+    \newpage
+}
+
+\title{A Gray Book of Potions}   
+\author{Bloodcrow Graa}
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\lhead{}
+\chead{\leftmark}
+\rhead{}
+
+\begin{document}
+
+\begin{titlepage}
+		\centering{
+			{\fontsize{40}{48}\selectfont 
+			A Gray Book}            
+		}\\
+        \vspace{1mm}
+        \centering{\huge{A poem on salves and potions}}\\
+		\vspace{10mm}
+		\centering{\Large{by Bloodcrow Graa}}\\
+		\vspace{\fill}
+\end{titlepage}
+
+\newpage
+\thispagestyle {empty}
+
+\vspace*{2cm}
+
+\begin{center}
+	\Large{
+		\textit{One life - make it count}
+	}
+\end{center}
+\newpage
+
+\tableofcontents
+
+
+
+\topskip0pt
+\vspace*{\fill}
+\chapter{Foreword}
+\begin{center}
+    \textit{Based on the ramblings of a madman.}
+\end{center}
+This book was made for the apothecaries already armed with the practical knowledge of making the potions listed in this book. It is meant to be used to refresh your knowledge or explore what to study next.\\\\
+However, knowing all the details, history and theoretical knowledge about a potion will not grant you the practial skill of actually making it. This book can most certainly be read and enjyoed by people completely unfamiliar or still apprenticing as apothecaries. If it helps to spark your interest, I am happy! We all look forward to seing you singe your temples and poison your patiens. If you truly find the knowledge in here intriguing, get out there and start studying amongst the real people of The Empire!\\
+\begin{center}
+    \textit{This book, or any book for that matter, will ever be able to replace the greatest teacher of all - failure\dots~And a good puke bucket.}
+\end{center}
+\vspace*{\fill}
+
+\mychapter{Apothecary Potions}{
+    Every apothecary knows how to mix these five essential preparations. They allow the drinker to gain medicinal aid without needing the personal attention of a physick.
+}
+
+\potion{Anodyne Analgesic}{
+    This dark blue elixir has a gritty, slightly sandy texture. It smells strongly of freshly cut grass. Put a tiny drop on your finger or your tongue, and the tip quickly becomes numb.
+}{Philtre}{
+    The liquid numbs the pain of your injuries, and provides an invigoration that quickly clears your mind.
+}{
+    You can overcome the roleplaying effect of a single traumatic wound of your choice until the end of the current engagement. 
+}{
+    One dram of Marrowort and one dram of True Vervain.
+}{
+    Replacing the more cumbersome Anodyne Embrocation, this potent elixir numbs pain, and helps clear and focus the mind of the drinker. The philtre is not without its dangers; while it allows the imbiber to overcome many of the effects of a traumatic injury, it does nothing to actually treat the effects of such wounds. More than one soldier has dropped dead after using the potion to allow them to ignore a serious condition that required immediate medical attention. It can also be used to alleviate the symptoms of painful medical conditions such as inflamed joints, arthritis and rheumatism, but the cost of doing so with a potion tends to place this option outside the reach of all save the most wealthy.
+}
+
+\potion{Bloodharrow Philtre}{
+    This translucent red liquid has tiny white particles suspended in it. It has a spicy scent, and a tiny amount on your tongue or your finger tingles unpleasantly for a moment.
+}{Philtre}{
+    Pain spreads rapidly through your body; you feel as if your blood is on fire. After a moment or two, the pain fades.
+}{
+    You lose the venom condition.
+}{    
+    One dram Imperial Roseweald and one dram of Marrowort.
+}{
+    A thin, slightly toxic elixir that harrows the blood of the one who drinks it. After a moment or two of agonising pain, the body is purged of venom, and of some minor poisons.
+}
+
+\potion{Elixir Vitae}{
+    This translucent liquid is tinted a pale blue-green. It has a clean, fresh scent. A tiny drop of the sticky fluid on your tongue or your finger tingles pleasantly for a moment.
+}{Philtre}{
+    A warm glow spreads quickly through your body, removing pain, revitalising your spirit and creating a sense of enormous well-being.
+}{
+    You regain up to three lost hits.
+}{
+    One dram of True Vervain and one dram of Cerulean Mazzarine.
+}{
+    This potent healing elixir captures the essence of True Vervain to restore health and vitality. It is a common preparation in the Empire, carried by warriors and healers alike, and many can identify the clear, slightly sticky liquid on sight.
+}
+
+\potion{Feverfail Elixir}{
+    This translucent grey liquid smells faintly of spring flowers. A tiny drop of the thick, syrupy fluid on your tongue causes a grimace - it tastes a little like spoiled milk.
+}{Philtre}{
+    You feel nauseous. A dizzying chill spreads through your body, leaving you incapacitated for a few moments. Both effects clear as quickly as they arose, leaving you feeling revitalised.
+}{
+    You lose the weakness condition.
+}{
+    One dram of Bladeroot and one dram of Imperial Roseweald.
+}{
+    This elixir drives out the lingering effects of enervation. It is occasionally useful in treating symptoms that include excessive tiredness or dizziness.
+}
+
+\potion{Ossean Solution}{
+    This thick, odourless, blue liquid has a gritty texture. When you rub it between finger and thumb it leaves a crusty residue that soon flakes away. It tastes disgusting.
+}{Philtre}{
+    You feel a numbness spreading through the flesh of your ruined limb as the torn ligaments and broken bones fuse together.
+}{
+    You regain the use of a single limb that has been ruined by cleave or impale.
+}{
+    One dram of Cerulean Mazzarine and one dram of Bladeroot.
+}{
+    For centuries, the Ossean Balm was used to rapidly restore ruined limbs. Recently, however, a method of distilling the essential power of that salve into liquid form was perfected by Navarr apothecaries, giving rise to the Ossean Elixir. When the philtre is drunk by someone who has been seriously injured, with more than one limb crippled, it tends to repair the limb that is most advantagous to the imbiber - a feature that intrigues some apothecaries. There is fierce debate in some circles about how the potion "knows" which limb to heal - how it knows that someone wishing to flee needs their leg repaired rather than their arm for example. Most apothecaries and physicks simply shrug and point out that this is just a tendency - that there are also harrowing stories of the philtre restoring the "wrong" limb with tragic consequences.
+}
+
+\chapter{Balms of the Fountainhead}
+\begin{it}
+    Mastery of these recipes allows an apothecary to brew preparations valuable to ritual magicians versed in the lore of Spring. With one of these potions a ritualist can wield the magic of the Spring realm more effectively, but they also become more susceptible to the influence of that realm.
+    \\\\
+    Initially, Imperial apothecaries who had mastered the Balms of the Fountainhead were able to create the Vernal Balm and Suffusion of Blood. However, following the defeat of the Druj orcs in Reikos in 379YE, information about certain techniques used by the Buruk Tepel came to light - coupled with the recovery of a number of books belonging to skilled Highborn apothecaries stolen by the occupation force. These writings contained details of a potent potion favoured by the Druj Gulai that built on the principles already familiar to Imperial potion makers, and knowledge of how to create the Talonvine Infusion quickly spread.
+\end{it}
+\newpage
+
+\widepotion{Vernal Balm}{
+    This blood-red ointment smells delicious. It has an oily, greasy texture if you rub it between finger and thumb, and it is quickly absorbed into your skin causing your entire hand to tingle.
+}{Salve}{
+    You become prone to sudden mood shifts and displays of strong emotion. Your attitudes become more straightforward, and you find complex plans and overthinking frustrating. You would rather take action than talk about it.
+}{
+    If you possess the Spring lore skill then you gain one additional effective rank to the next Spring ritual that you perform within ten minutes, subject to the normal rules for effective skill. This is a tonic; the effect of any other tonic you have drunk immediately ends.
+}{
+    Two drams each of Imperial roseweald and marrowort, one dram of true vervain and one crystallised mana.
+}{
+    This textured ointment is quickly absorbed through the skin, speeding the blood and enhancing a magician's awareness of Spring's power. It is often mixed with pigment and used to draw or paint runes or looping designs on the skin of the face and hands just prior to the start of a ritual; while the balm itself is absorbed, the pigment remains behind.
+    \\\\
+    Some magicians find the almost narcotic sensations that accompany use of this balm to be very appealing. The Vernal Balm helps to strip away complexity, and allows a magician to see straightforward solutions to problems, as well as freeing them from emotion constraints and encouraging them to express themselves simply and directly.
+}
+
+\widepotion{Suffusion of Blood}{
+    When this blood-red elixir catches the light, it glows with a faintly translucent aura. The scent smells of freshly cut grass, and causes your nostrils to tingle. The sweet, fruity taste causes a moment of dizziness.
+}{Liquid}{
+    You become very direct, preferring to go directly to the heart of a problem, say what you think, or deal with immediate problems. You find it difficult to think about the past, or anything more pressing than the immediate future. You also become emotionally volatile, and are especially short-tempered. Anything that frustrates or irritates you is likely to cause you to lash out against its source.
+}{
+    If you possess the Spring lore skill then you can use up to 3 personal mana as if it were crystal mana on the next spring ritual that you perform within ten minutes.
+}{
+    Three drams of Imperial roseweald, two drams of true vervain, and one dram each of cerulean mazzarine, marrowort and bladeroot.
+}{
+    This blood-red elixir allows a ritual magician to exert great power in the realm of Spring. It allows a ritualist to align their reserves of personal power with the realm by synchronising their emotions and behaviour with that of the Spring. By seeking out the ways that the human spirit most reflects (or is reflected by) the supernatural realm, they unlock great potential to weave Spring magic.
+    \\\\
+    Some magicians find the sensation of working Spring rituals with the aid of the Suffusion of Blood to be almost ecstatic. They pursue opportunities to use the potion, even when there are sufficient crystallised resources available. The thrill of directly wielding the power of a realm, rather than using an intermediary, coupled with the emotional influence of both the elixir and the realm leads to addictive behaviour. Masters sometimes tell their apprentices the cautionary tale of Angelique von Tassato, a League ritualist who beggared and ultimately destroyed her own troupe in pursuit of the freedom she could only find in the arms of the Suffusion of Blood.
+}
+
+\widepotion{Talonvine Infusion}{
+    This coarse yellow substance gives off a musty scent. It raises itchy welts similar to nettle stings on contact with skin. It tastes sweet, but causes a painful swelling on the tongue - as if one had been stung by a wasp.
+}{Infusion}{
+    If you have inhaled the steam or smoke, you feel a rush of vitality and strength that quickly fades but leaves a powerful desire to take action - without concern for rules or long-term consequences. If instead you ate this substance, you experience stabbing stomach pains (consult a ref).
+}{
+    If you possess the Spring lore skill then you gain three additional ranks to the next spring ritual that you perform within ten minutes, subject to the normal rules for effective skill. This is a tonic; the effect of any other tonic you have drunk immediately ends.
+}{
+    Three drams each of Imperial roseweald and marrowort, one dram of true vervain, one crystallised mana, and one ring of ilium.
+}{
+    This coarse substance is mildly toxic, and can cause uncomfortable welts to form on exposed skin. There are some cases of people who have gotten the infusion in their eyes suffering from painful blindness or restricted vision that can last for several hours. The infusion is usually added to boiling water, and produces a thick, pungently musty steam that must be actively inhaled. Doing so causes an exhilarating rush of vitality and enthusiasm, which is quickly replaced by impatience and an urge to do something - anything at all - as soon as possible. The initial rush from inhaling the steam from a properly prepared Talonvine Infusion may prove to be dangerously seductive, and the secondary effects can be difficult to channel constructively.
+}
+
+\mychapter{Decoctions of Hoarfrost}{
+    Mastery of these recipes allows an apothecary to brew preparations valuable to ritual magicians versed in the lore of Winter. With one of these potions a ritualist can wield the magic of the Winter realm more effectively, but they also become more susceptible to the ambiguous influences of that realm.
+    \\\\
+    Imperial apothecaries who mastered the Decoctions of Hoarfrost were able to create the Hungry Moon and Barren Watchtower. There were always rumours about other potions with similar effects, but they were largely dismissed as simple recipe variants of these two. Following the liberation of the Highborn territory of Reikos in 379YE however, the situation changed slightly. Recipes belonging to the Druj apothecaries known as the Buruk Tepel were captured which detailed a third, expensive and difficult to brew potion referred to as Sorrow's Mask. The potion clearly built on principles familiar to apothecaries who had mastered the Decoctions, and knowledge of how to create the elixir quickly spread after the reconquest of High Chalcis. Some scholars who have studied some of the original notes point out that it appears the original Druj recipe was considerably more difficult to make - but that they were able to refine their own processes using information extracted from Imperial apothecaries captured in Reikos.
+}
+
+\widepotion{Decoction of the Hungry Moon}{
+    This black, oily elixir has a thick sediment at the bottom that seems to drink in any light that hits it. It tastes vile, like rotting meat. It would require quite an effort of will for most people to drink this liquid.
+}{Liquid}{
+    This potion tastes unpleasantly of spoiled meat. You become emotionally cold but highly possessive and protective of your friends and allies.
+}{
+    If you possess the Winter lore skill then you gain one additional effective rank to the next Winter ritual that you perform within ten minutes, subject to the normal rules for effective skill. This is a tonic; the effect of any other tonic you have drunk immediately ends.
+}{
+    Two drams each of Bladeroot and True Vervain, one dram of Marrowort and one crystallised mana.
+}{
+    This black liquid has an unpleasantly oily texture, and often contains small amounts of Bladeroot or Marrowort matter as sediment that settles on the bottom of a flask. It must be shaken thoroughly before consuming. It tastes very unpleasant indeed, and while some apothecaries add sugar to the mixture, the general consensus agrees that doing so can damage the potion's effectiveness. When consumed, it cools the blood and chills the heart; by focusing a magician towards the dark emotional states it enhances the synergy between a mortal and the Winter realm.
+    \\\\
+    Some Dawnish enchanters employ the decoction prior to having dealings with Winter eternals; the emotional side-effects apparently help the enchanter achieve in a mindset conducive to negotiations with these dangerous creatures. With the same reasoning, some Varushkan volhov have been known to "embrace the moon" before meeting with certain sovereigns. It is an expensive way to focus the mind, but one that has seen some success. While being possessive of allies and friends might make the magician prone to conflict with the eternal (or the sovereign), and make it hard to reach a compromise, it can be very helpful in ensuring the creature respects the negotiator even after the negotiations fail.
+}
+
+\widepotion{The Barren Watchtower}{
+    This black, oily elixir seems to drink in any light that hits it. The thick sediment at the bottom hangs in the liquid for several minutes after it is shaken up. The salty, bitter taste gives you an urge to rinse your mouth out.
+}{Liquid}{
+    Drinking this elixir makes you very thirsty and dry mouthed. You become cold and calculating, seeing everything in terms of cost and benefit. Individual lives or needs become meaningless in the face of your goals and what you consider to be best. You feel a powerful urge to ensure you and yours are safe, regardless of the cost to other people.
+}{
+    If you possess the Winter lore skill then you can use up to 3 personal mana as if it were crystal mana on the next Winter ritual that you perform within ten minutes.
+}{
+    Three drams of Bladeroot, two drams of Marrowort and one dram each of Imperial Roseweald, Cerulean Mazzarine and True Vervain.
+}{
+    This gritty black elixir contains tiny pale particles in suspension, and has a dehydrating effect on the drinker. It permits a ritual magician to exert great power in the realm of Winter. It allows a ritualist to bind the powers of the realm by force of will, dominating the magic and turning it to the magician's ends.
+    \\\\
+    This potent elixir was perfected by the magisters of the Circle of the Barren Watchtower, a necromantic cabal studying at the Necropolis. Following some early criticism of their use of the elixir, the noted theologian of the time, Saul, pointed out that while such a potion can create dangerous urges, it also allows mortals to demonstrate their ability to perform ritual magic using only their innate abilities - it frees them from reliance on crystallised mana. Further, he asserted that a magician who "knows" that the elixir is influencing their thoughts is in a much better position to resist that influence - and receives valuable experience dealing with other un-Virtuous urges.
+}
+
+\widepotion{Sorrow's Mask}{
+    This lumpy white salve exudes an indefinable scent that brings to mind sad memories of past loss. It tastes unspeakably horrible, and takes an effort of will to consume any.
+}{Salve}{
+    Where this balm has been applied, your skin becomes numb. You are constantly reminded of your regrets; it is easy for you to succumb to feelings of grief, loss, despair, and sorrow if you do not keep focused on the task at hand.
+}{
+    If you possess the Winter lore skill then you gain three additional ranks to the next Winter ritual that you perform within ten minutes, subject to the normal rules for effective skill. This is a tonic; the effect of any other tonic you have drunk immediately ends.
+}{
+    Three drams each of Bladeroot and True Vervain, one dram of Marrowort, one crystallised mana, and one ring of ilium.
+}{
+    This thick, oily salve uses animal fat as a base, and has a gritty, unpleasant texture full of unsettling lumps. It must be smoothed into the skin until it is completely absorbed - and where it is used it brings a deep numbness. Consequently, users often prefer to spread it on their face or chest rather than their hands of arms as performing ritual magic with no feeling in the fingers can be a daunting prospect.
+    \\\\
+    As with the Decoction of Hoarfrost, the salve focuses a magician towards dark emotional states as it enhances the resonance between a mortal and the Winter realm. Unlike the weaker preparation, however, it is very easy for an inexperienced user to become so lost in feelings of sorrow and despair that they are unable to rouse themselves to contribute to the very magic they seek to enhance with this preparation. A novice user must be carefully watched to ensure they remain focused on the matter at hand rather than lost in grim remembrance of every past failure.
+    \\\\
+    Interestingly, there are some references to a potion very similar to this having been in use in pre- and early-Imperial Marches and Wintermark. Allegedly, that vile preparation was made by agents of Agramant using the fat from murdered human bodies; the Druj appear to favour human and orc fat as a base as well. Civilised magicians obviously prefer to use fat gathered from animals slaughtered for their meat - even the most pragmatic apothecary is likely to balk at the idea of killing a person purely to provide materials for a potion.
+}
+
+\mychapter{Double-sided Blade}{
+    These preparations originate with the Druj orcs (or perhaps with the orcs of the Great Forest depending on who one asks). The recipes were originally captured from the Druj during the liberation of Reikos, when the herbal text of the Buruk Tepel of the Stone Toad clan fell into Imperial hands. Originally hidden behind a complex cipher, the book was eventually decoded by Imperial scholars and the recipes within revealed.
+    \\\\
+    In Autumn 382YE, the recipes that comprise the Double-sided Blade were distributed to Imperial apothecaries by order of the Imperial Senate. along with several other new potion recipes. Known as The Endless Struggle among the Druj, the potions were also apparently part of the herbal lore of the Great Forest orcs - who know them as The Two-bladed Knife, and shared the recipes with the Highborn and Navarr as thanks for their assistance establishing themselves in Therunin.
+    \\\\
+    Like the Tonics of the Deep Forest, these preparations grant vigour and health. Unlike the more commonly known recipes, however, these two potions come with unpleasant side effects that make them less than ideal for use by Imperial citizens. Also unlike almost every other known preparation, the potions created by the Double-sided Blade are more effective when consumed by orcs than when consumed by humans. As with the more familiar potions, the Double-sided Blade preparations are tonics - meaning that one cannot enjoy their benefits in conjunction with any other tonic.
+    \\\\
+    These flaws potentially limits their usefulness to ethical Imperial apothecaries, even though they are in theory easier to prepare than the equivalent Tonics of the Deep Forest. Still, as the Great Forest orcs say of the preparations: " “These potions are like the double-bladed knife that strikes at the hand that wields it. When you must cut, you must also be cut. Sometimes your blood is the price for the victory you require.”
+}
+
+\widepotion{Warming Armour}{
+    This deep crimson liquid is oddly warm to the touch. It has a strong, spicy odour and taste.
+}{Liquid}{
+    You feel a warmth in your belly that spreads quickly throughout your body. You feel an urge to take bloody, violent revenge on anyone you feel has wronged you.
+}{
+    You are subject to the VENOM condition. If this condition is removed prematurely, you immediately drop to 0 hits. If you are an orc, you also gain 3 additional ranks of endurance. If you are a human, you gain 2 additional ranks of endurance. The effects last until the end of the next skirmish, battle, or quest or until the VENOM is removed. This is a tonic; the effect of any other tonic you have drunk immediately ends.
+}{
+    Two drams each of Imperial Roseweald and True Vervain, one dram each of Cerulean Mazzarine and Marrowort.
+}{
+    "Warming Armour", as it has been dubbed by the Imperial Orcs, provides a significant increase to personal strength, to the ability to endure fatal wounds, but at some cost. When consumed by an orc, it is comparable to Ironblood Tonic in effectiveness, but where that potent preparation dulls emotion and reduces interest in other people, this potion inflames passions and encourages the imbiber to violence - and to thoughts of bloody vengeance.
+    \\\\
+    Furthermore, it significantly thins the blood - so much so that while it helps the drinker resist fatal wounds for a time, when they do eventually succumb to their enemies, they quickly bleed out and die. Worse, anything that interrupts the progress of the potion can potentially result in a fatal aftershock that kills the drinker.
+    \\\\
+    This potion is apparently know as Warspice among the Druj and the Great Forest orcs. The orcs of the Mallum apparently use it extensively to empower reckless - and by extension expendable - warriors and unleash them against their enemies. The Great Forest orcs are more cautious in its use, but seem prepared to employ it when the odds are against them and victory is more important than survival.
+}
+
+\widepotion{Weakening Sun}{
+    This thick dark-blue salve is oily to the touch and absorbed quickly by the skin. It smells strongly of fresh, uncooked meat.
+}{Salve}{
+    You feel a burst of euphoria that slowly fades but never goes away. Painful or uncomfortable sensations are muted, and you feel an urge to submit to anyone who you feel has authority over you.
+}{
+    You are subject to the WEAKNESS condition. If this condition is removed prematurely, you immediately drop to 0 hits. If you are an orc, you also gain 3 additional ranks of endurance. If you are a human, you gain 2 additional ranks of endurance. The effects last until the end of the next skirmish, battle, or quest, or the WEAKNESS is removed. This is a tonic; the effect of any other tonic you have drunk immediately ends.
+}{
+    Two drams each of Marrowort and Bladeroot, one dram each of Cerulean Mazzarine and True Vervain.
+}{
+    The Imperial Orcs have dubbed the salve that the Druj know as Corpseskin and the Great Forest orcs call Oakenshield as Weakening Sun. Applied to the skin of the face or hands, it brings a rush of pleasure that slowly diminishes but does not fade completely until after the other effects of the salve have worn off. This rush of pleasure could potentially lead to addiction in individuals prone to such behaviour. Worse, while the salve helps the user endure savage wounds, it also diminishes their "sense of self". They become prone to obeying those they perceive as more important or powerful than themselves without question, and it brings a kind of foggy confusion that makes it impossible for the user to wield magic, employ crafted items, or exert their will to take action.
+    \\\\
+    Like Warming Armour, Weakening Sun has potentially lethal side effects. If the pleasant weakness it causes is prematurely removed, the sudden rush of returning sensation and awareness can overwhelm the subject causing them to suffer a potentially fatal seizure.
+}
+
+\mychapter{Infusions of Feathers}{
+    These mystic infusions grant those who inhale them supernatural insight. They are intended to be poured into hot water and the resulting steam drawn into the lungs, from where its semi-narcotic effect flows throughout the entire body. Extensive use of these infusions can have a detrimental effect on the peace of mind of the user, and they are best employed sparingly.
+    \\\\
+    These potions are, unsurprisingly, popular with the Kallavesi and with mystics of all nations. The modern recipes used to brew the infusions were refined over centuries in the swamps of Kallavesa, but the Navarr used similar preparations for centuries, and can claim the credit for first developing the Ravenwing Infusion at the very least.
+}
+
+\end{document}
